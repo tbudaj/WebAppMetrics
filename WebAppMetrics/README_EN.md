@@ -20,14 +20,10 @@
 - **Docker Support** - Full application containerization
 
 ## ??? Architecture
-
-```
 ???????????????????    ???????????????????    ???????????????????    ???????????????????
 ?  WebAppMetrics  ?????? OpenTelemetry   ??????   Prometheus    ??????     Grafana     ?
 ?     (.NET 8)    ?    ?   Collector     ?    ?   (Metrics DB)  ?    ? (Visualization) ?
 ???????????????????    ???????????????????    ???????????????????    ???????????????????
-```
-
 ### ?? Available Metrics
 
 #### Custom Metrics
@@ -49,12 +45,8 @@
 - PowerShell (for automation scripts)
 
 ### 1. Running the Application
-
-```bash
 cd WebAppMetrics
 dotnet run
-```
-
 The application will be available at: `https://localhost:7029`
 
 ### 2. Swagger UI
@@ -62,26 +54,10 @@ Access API documentation at: `https://localhost:7029/swagger`
 
 ### 3. Running the Observability Stack
 
-#### Step 1: Create Docker Network
-```powershell
-podman network create otel-net
-```
-
-#### Step 2: Start OpenTelemetry Collector
-```powershell
-.\Configuration\otel-collector.ps1
-```
-
-#### Step 3: Start Prometheus
-```powershell
-.\Configuration\Prometheus.ps1
-```
-
-#### Step 4: Start Grafana
-```powershell
-.\Configuration\grafana.ps1
-```
-
+#### Step 1: Create Docker Networkpodman network create otel-net
+#### Step 2: Start OpenTelemetry Collector.\Configuration\otel-collector.ps1
+#### Step 3: Start Prometheus.\Configuration\Prometheus.ps1
+#### Step 4: Start Grafana.\Configuration\grafana.ps1
 ### 4. Tool Access
 
 | Tool | URL | Credentials |
@@ -94,8 +70,6 @@ podman network create otel-net
 ## ?? Configuration
 
 ### OpenTelemetry Settings (appsettings.json)
-
-```json
 {
   "OpenTelemetry": {
     "ServiceName": "WebAppMetrics",
@@ -112,8 +86,6 @@ podman network create otel-net
     }
   }
 }
-```
-
 ### Configurable Export Intervals
 
 - **To OTLP Collector**: Default every 30 seconds
@@ -121,8 +93,6 @@ podman network create otel-net
 - **Customizable** - All intervals can be adjusted via configuration
 
 ## ?? Project Structure
-
-```
 WebAppMetrics/
 ??? Controllers/
 ?   ??? WeatherForecastController.cs    # API Controller with instrumentation
@@ -137,8 +107,6 @@ WebAppMetrics/
 ??? Program.cs                         # Application and OpenTelemetry configuration
 ??? appsettings.json                   # Application configuration
 ??? WebAppMetrics.csproj              # Project file with NuGet packages
-```
-
 ## ?? Technical Features
 
 ### OpenTelemetry Instrumentation
@@ -188,17 +156,11 @@ The project includes full containerization support:
 
 ## ?? Usage Examples
 
-### 1. API Testing
-```bash
-curl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
-```
-
+### 1. API Testingcurl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
 ### 2. Console Metric Monitoring
 Metrics are automatically displayed in the application console every 10 seconds.
 
-### 3. Prometheus Queries
-```promql
-# Request rate
+### 3. Prometheus Queries# Request rate
 rate(weather_forecast_requests_total[5m])
 
 # 95th percentile response time
@@ -206,8 +168,6 @@ histogram_quantile(0.95, weather_forecast_processing_duration_ms_bucket)
 
 # Active requests
 weather_forecast_active_requests
-```
-
 ## ?? Educational Goals
 
 This project is ideal for learning:
