@@ -37,7 +37,7 @@
 - **HTTP Client Metrics** - Outbound HTTP calls instrumentation
 - **Runtime Metrics** - GC collections, memory usage, thread pool
 
-## ?? Szybki Start
+## ? Szybki Start
 
 ### Wymagania
 - .NET 8 SDK
@@ -54,10 +54,14 @@ Dostêp do dokumentacji API: `https://localhost:7029/swagger`
 
 ### 3. Uruchomienie Stosu Obserwowoœci
 
-#### Krok 1: Utworzenie sieci Dockerpodman network create otel-net
-#### Krok 2: Uruchomienie OpenTelemetry Collector.\Configuration\otel-collector.ps1
-#### Krok 3: Uruchomienie Prometheus.\Configuration\Prometheus.ps1
-#### Krok 4: Uruchomienie Grafana.\Configuration\grafana.ps1
+#### Krok 1: Utworzenie sieci Docker
+podman network create otel-net
+#### Krok 2: Uruchomienie OpenTelemetry Collector
+.\Configuration\otel-collector.ps1
+#### Krok 3: Uruchomienie Prometheus
+.\Configuration\Prometheus.ps1
+#### Krok 4: Uruchomienie Grafana
+.\Configuration\grafana.ps1
 ### 4. Dostêp do Narzêdzi
 
 | Narzêdzie | URL | Credentials |
@@ -130,7 +134,7 @@ WebAppMetrics/
 
 Ten projekt demonstruje kluczowe aspekty monitorowania aplikacji mikroserwisowych:
 
-### ?? Observability Pillars
+### ??? Observability Pillars
 1. **Metrics** - Agregowane dane liczbowe o wydajnoœci
 2. **Logs** - Strukturalne logowanie zdarzeñ
 3. **Traces** - Œledzenie œcie¿ek wykonania (przygotowane do rozszerzenia)
@@ -156,11 +160,13 @@ Projekt zawiera pe³ne wsparcie dla konteneryzacji:
 
 ## ?? Przyk³ady U¿ycia
 
-### 1. Testowanie APIcurl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
+### 1. Testowanie API
+curl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
 ### 2. Monitorowanie Metryki w Konsoli
 Metryki s¹ automatycznie wyœwietlane w konsoli aplikacji co 10 sekund.
 
-### 3. Zapytania Prometheus# Request rate
+### 3. Zapytania Prometheus
+# Request rate
 rate(weather_forecast_requests_total[5m])
 
 # 95th percentile response time

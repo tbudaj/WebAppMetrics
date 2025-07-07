@@ -37,7 +37,7 @@
 - **HTTP Client Metrics** - Outbound HTTP calls instrumentation
 - **Runtime Metrics** - GC collections, memory usage, thread pool
 
-## ?? Quick Start
+## ? Quick Start
 
 ### Requirements
 - .NET 8 SDK
@@ -54,10 +54,14 @@ Access API documentation at: `https://localhost:7029/swagger`
 
 ### 3. Running the Observability Stack
 
-#### Step 1: Create Docker Networkpodman network create otel-net
-#### Step 2: Start OpenTelemetry Collector.\Configuration\otel-collector.ps1
-#### Step 3: Start Prometheus.\Configuration\Prometheus.ps1
-#### Step 4: Start Grafana.\Configuration\grafana.ps1
+#### Step 1: Create Docker Network
+podman network create otel-net
+#### Step 2: Start OpenTelemetry Collector
+.\Configuration\otel-collector.ps1
+#### Step 3: Start Prometheus
+.\Configuration\Prometheus.ps1
+#### Step 4: Start Grafana
+.\Configuration\grafana.ps1
 ### 4. Tool Access
 
 | Tool | URL | Credentials |
@@ -130,7 +134,7 @@ WebAppMetrics/
 
 This project demonstrates key aspects of microservice application monitoring:
 
-### ?? Observability Pillars
+### ??? Observability Pillars
 1. **Metrics** - Aggregated numerical performance data
 2. **Logs** - Structured event logging
 3. **Traces** - Execution path tracking (prepared for extension)
@@ -156,11 +160,13 @@ The project includes full containerization support:
 
 ## ?? Usage Examples
 
-### 1. API Testingcurl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
+### 1. API Testing
+curl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
 ### 2. Console Metric Monitoring
 Metrics are automatically displayed in the application console every 10 seconds.
 
-### 3. Prometheus Queries# Request rate
+### 3. Prometheus Queries
+# Request rate
 rate(weather_forecast_requests_total[5m])
 
 # 95th percentile response time
