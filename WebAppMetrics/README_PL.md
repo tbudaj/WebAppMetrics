@@ -7,16 +7,16 @@
 
 ## ?? Opis Projektu
 
-**WebAppMetrics** to demonstracyjna aplikacja Web API napisana w .NET 8, która prezentuje implementacjê kompletnego stosu obserwowoœci aplikacji mikroserwisowych. Projekt zawiera pe³n¹ integracjê z OpenTelemetry, eksportowaniem metryki do Prometheus oraz wizualizacj¹ w Grafana.
+**WebAppMetrics** to demonstracyjna aplikacja Web API napisana w .NET 8, która prezentuje implementacjê kompletnego stosu obserwowoœci aplikacji mikroserwisowych. Projekt zawiera pe³n¹ integracjê z OpenTelemetry, eksportowaniem metryk do Prometheus oraz wizualizacj¹ w Grafana.
 
 ### ?? G³ówne Funkcjonalnoœci
 
 - **RESTful API** - Weather Forecast endpoint z dokumentacj¹ Swagger/OpenAPI
 - **OpenTelemetry Integration** - Kompletne instrumentowanie aplikacji z metrykami
 - **Custom Metrics** - Dedykowane metryki biznesowe aplikacji
-- **Prometheus Export** - Eksport metryki do systemu monitoringu Prometheus
-- **Grafana Dashboards** - Gotowa infrastruktura do wizualizacji metryki
-- **Console Logging** - Podgl¹d metryki w czasie rzeczywistym w konsoli
+- **Prometheus Export** - Eksport metryk do systemu monitoringu Prometheus
+- **Grafana Dashboards** - Gotowa infrastruktura do wizualizacji metryk
+- **Console Logging** - Podgl¹d metryk w czasie rzeczywistym w konsoli
 - **Docker Support** - Pe³na konteneryzacja aplikacji
 
 ## ??? Architektura
@@ -119,8 +119,8 @@ WebAppMetrics/
 - **Runtime instrumentation** dla monitorowania wydajnoœci .NET
 - **HTTP client instrumentation** dla wywo³añ zewnêtrznych
 
-### Eksportery Metryki
-- **OTLP Exporter** - Push metryki do OpenTelemetry Collector
+### Eksportery Metryk
+- **OTLP Exporter** - Push metryk do OpenTelemetry Collector
 - **Console Exporter** - Real-time monitoring w konsoli aplikacji
 - **Prometheus Format** - Kompatybilnoœæ z ekosystemem Prometheus
 
@@ -162,7 +162,7 @@ Projekt zawiera pe³ne wsparcie dla konteneryzacji:
 
 ### 1. Testowanie API
 curl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
-### 2. Monitorowanie Metryki w Konsoli
+### 2. Monitorowanie Metryk w Konsoli
 Metryki s¹ automatycznie wyœwietlane w konsoli aplikacji co 10 sekund.
 
 ### 3. Zapytania Prometheus
