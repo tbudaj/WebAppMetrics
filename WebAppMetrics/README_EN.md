@@ -1,15 +1,15 @@
-# WebAppMetrics - .NET 8 Web API with OpenTelemetry
+﻿# WebAppMetrics - .NET 8 Web API with OpenTelemetry
 
 ![.NET 8](https://img.shields.io/badge/.NET-8.0-blue)
 ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-1.8.1-orange)
 ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-green)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 
-## ?? Project Description
+## 📋 Project Description
 
 **WebAppMetrics** is a demonstration Web API application written in .NET 8 that showcases the implementation of a complete observability stack for microservice applications. The project includes full integration with OpenTelemetry, metric export to Prometheus, and visualization in Grafana.
 
-### ?? Key Features
+### 🚀 Key Features
 
 - **RESTful API** - Weather Forecast endpoint with Swagger/OpenAPI documentation
 - **OpenTelemetry Integration** - Complete application instrumentation with metrics
@@ -19,12 +19,13 @@
 - **Console Logging** - Real-time metric preview in console
 - **Docker Support** - Full application containerization
 
-## ??? Architecture
-???????????????????    ???????????????????    ???????????????????    ???????????????????
-?  WebAppMetrics  ?????? OpenTelemetry   ??????   Prometheus    ??????     Grafana     ?
-?     (.NET 8)    ?    ?   Collector     ?    ?   (Metrics DB)  ?    ? (Visualization) ?
-???????????????????    ???????????????????    ???????????????????    ???????????????????
-### ?? Available Metrics
+## 🏗️ Architecture
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│  WebAppMetrics  │───▶│ OpenTelemetry   │───▶│   Prometheus    │───▶│     Grafana     │
+│     (.NET 8)    │    │   Collector     │    │   (Metrics DB)  │    │ (Visualization) │
+└─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
+
+### 📊 Available Metrics
 
 #### Custom Metrics
 - `weather_forecast_requests_total` - Counter for weather API requests
@@ -37,7 +38,7 @@
 - **HTTP Client Metrics** - Outbound HTTP calls instrumentation
 - **Runtime Metrics** - GC collections, memory usage, thread pool
 
-## ? Quick Start
+## ⚡ Quick Start
 
 ### Requirements
 - .NET 8 SDK
@@ -71,7 +72,7 @@ podman network create otel-net
 | Prometheus | http://localhost:9090 | - |
 | Grafana | http://localhost:3000 | admin/admin |
 
-## ?? Configuration
+## ⚙️ Configuration
 
 ### OpenTelemetry Settings (appsettings.json)
 {
@@ -96,22 +97,22 @@ podman network create otel-net
 - **To Console**: Default every 10 seconds
 - **Customizable** - All intervals can be adjusted via configuration
 
-## ?? Project Structure
+## 📁 Project Structure
 WebAppMetrics/
-??? Controllers/
-?   ??? WeatherForecastController.cs    # API Controller with instrumentation
-??? Services/
-?   ??? MetricsService.cs               # Metrics management service
-??? Configuration/                      # Scripts and configurations
-?   ??? otel-collector.yaml            # OpenTelemetry Collector configuration
-?   ??? otel-collector.ps1             # Collector startup script
-?   ??? Prometheus.yaml                # Prometheus configuration
-?   ??? Prometheus.ps1                 # Prometheus startup script
-?   ??? grafana.ps1                    # Grafana startup script
-??? Program.cs                         # Application and OpenTelemetry configuration
-??? appsettings.json                   # Application configuration
-??? WebAppMetrics.csproj              # Project file with NuGet packages
-## ?? Technical Features
+├── Controllers/
+│   └── WeatherForecastController.cs    # API Controller with instrumentation
+├── Services/
+│   └── MetricsService.cs               # Metrics management service
+├── Configuration/                      # Scripts and configurations
+│   ├── otel-collector.yaml            # OpenTelemetry Collector configuration
+│   ├── otel-collector.ps1             # Collector startup script
+│   ├── Prometheus.yaml                # Prometheus configuration
+│   ├── Prometheus.ps1                 # Prometheus startup script
+│   └── grafana.ps1                    # Grafana startup script
+├── Program.cs                         # Application and OpenTelemetry configuration
+├── appsettings.json                   # Application configuration
+└── WebAppMetrics.csproj              # Project file with NuGet packages
+## 🔧 Technical Features
 
 ### OpenTelemetry Instrumentation
 - **Automatic instrumentation** for ASP.NET Core requests
@@ -130,27 +131,27 @@ WebAppMetrics/
 - **XML Comments** for enhanced API documentation
 - **Response types** and validation attributes
 
-## ?? Microservice Application Performance Analysis
+## 📈 Microservice Application Performance Analysis
 
 This project demonstrates key aspects of microservice application monitoring:
 
-### ??? Observability Pillars
+### 🏛️ Observability Pillars
 1. **Metrics** - Aggregated numerical performance data
 2. **Logs** - Structured event logging
 3. **Traces** - Execution path tracking (prepared for extension)
 
-### ?? Key Performance Indicators (KPIs)
+### 📊 Key Performance Indicators (KPIs)
 - **Request Rate** - Number of requests per second
 - **Response Time** - API response time
 - **Error Rate** - Percentage of error responses
 - **Resource Utilization** - CPU, memory, GC usage
 
-### ?? Production Readiness
+### 🚀 Production Readiness
 - **Configurable export intervals** for performance optimization
 - **Resource-aware configuration** for different environments
 - **Scalable architecture** ready for distribution
 
-## ?? Docker Support
+## 🐳 Docker Support
 
 The project includes full containerization support:
 
@@ -158,7 +159,7 @@ The project includes full containerization support:
 - PowerShell scripts for observability infrastructure
 - Preconfigured networking for inter-container communication
 
-## ?? Usage Examples
+## 💡 Usage Examples
 
 ### 1. API Testing
 curl -X GET "https://localhost:7029/api/WeatherForecast" -H "accept: application/json"
@@ -174,7 +175,7 @@ histogram_quantile(0.95, weather_forecast_processing_duration_ms_bucket)
 
 # Active requests
 weather_forecast_active_requests
-## ?? Educational Goals
+## 🎓 Educational Goals
 
 This project is ideal for learning:
 
@@ -184,7 +185,7 @@ This project is ideal for learning:
 - **Best practices** in application monitoring
 - **Performance tuning** of web applications
 
-## ?? Contributing
+## 🤝 Contributing
 
 The project is open for collaboration. It can be extended with:
 - Additional business metrics
@@ -193,10 +194,10 @@ The project is open for collaboration. It can be extended with:
 - Ready-made Grafana dashboards
 - Health check endpoints
 
-## ?? License
+## 📄 License
 
 This project is available under the MIT license.
 
 ---
 
-**WebAppMetrics** - Your gateway to the world of microservice application observability! ????
+**WebAppMetrics** - Your gateway to the world of microservice application observability! 🚀📊
