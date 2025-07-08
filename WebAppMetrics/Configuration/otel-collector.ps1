@@ -1,1 +1,1 @@
-﻿podman run -d --name otel-collector --network otel-net -v otel-collector.yaml:/etc/otelcol-contrib/config.yaml:Z -p 4317:4317 -p 4318:4318 -p 8088:8088 otel/opentelemetry-collector-contrib:latest --config /etc/otelcol-contrib/otel-collector.yaml
+﻿podman run -d --name otel-collector --network otel-net -v otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml:Z -p 4317:4317 -p 4318:4318 -p 8088:8088 otel/opentelemetry-collector-contrib:latest --config /etc/otelcol-contrib/config.yaml
